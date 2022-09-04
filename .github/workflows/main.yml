@@ -30,7 +30,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: 
-        cd my-app, 
-        mvn compile, 
-        java -cp target/classes com.mycompany.app.App
+      run: mvn -B clean  package --file ./my-app/
