@@ -30,4 +30,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -e -x package /home/infy/git_hub/maven-hello-world/my-app/pom.xml
+      run: mvn -e package /home/infy/git_hub/maven-hello-world/my-app/pom.xml
