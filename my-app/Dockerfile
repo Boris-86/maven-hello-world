@@ -1,5 +1,5 @@
-FROM maven:3.6.0-jdk-11-slim AS build
-COPY . .
-RUN mvn -f /home/boris/infy/git_hub/maven-hello-world/my-app/src/main/java/com/mycompany/app clean package
-
+FROM openjdk:8-jre-alpine
+WORKDIR /app
+COPY target/my-app-1.0.0.jar /app.jar
+CMD ["/usr/bin/java", "-jar", "/app.jar"]
 
