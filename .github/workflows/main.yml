@@ -33,6 +33,8 @@ jobs:
         cache: maven
     - name: 'Step-3: Build with Maven'
       run: mvn -B clean package --file ./my-app/pom.xml
+    - name: 'Step-4: Build a Docker Image'
+      run: sudo docker build .
       
       
    
