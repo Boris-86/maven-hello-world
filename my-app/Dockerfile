@@ -1,5 +1,7 @@
-FROM openjdk:8-jre-alpine
-WORKDIR /app
-COPY target/my-app-1.0.0.jar /app.jar
-CMD ["/usr/bin/java", "-jar", "/app.jar"]
-
+FROM eclipse-temurin:8-jre
+WORKDIR /java
+ARG version
+ARG app_name
+ENV rootdir="my-app/target"
+COPY ${rootdir}/${app_name}-${version}.jar ./application.jar
+CMD ["java", "-jar", "application.jar"]
