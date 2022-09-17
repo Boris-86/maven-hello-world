@@ -23,8 +23,10 @@ jobs:
       with:
         java-version: '8'
       #-------------------------------------------------------
-    - name: 'Step-3: Build with Maven'
+    - name: 'Step-2.5: Validate POM'
       run: mvn validate -DbumpPatch -f ./my-app/pom.xml 
+      #-------------------------------------------------------
+    - name: 'Step-3: Build with Maven'
       run: mvn -B clean package --file ./my-app/pom.xml
       #-------------------------------------------------------
     - name: 'Step-4: Set up Docker Buildx'
