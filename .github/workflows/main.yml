@@ -23,7 +23,7 @@ jobs:
       with:
         java-version: '8'
       #-------------------------------------------------------
-    - name: 'Step-2: Validate POM'
+    - name: 'Step-2: Update POM Version'
       run: mvn validate -DbumpPatch -f ./my-app/pom.xml 
       #-------------------------------------------------------
     - name: 'Step-3: Build with Maven'
