@@ -1,7 +1,3 @@
-FROM eclipse-temurin:8-jre
-WORKDIR /java
-ARG version
-ARG app_name
-ENV rootdir="my-app/target"
-COPY ${rootdir}/${app_name}-${version}.jar ./application.jar
-CMD ["java", "-jar", "application.jar"]
+FROM maven:3.8.6-openjdk-8 AS build
+WORKDIR /home/app
+COPY /my-app/target/my-app-1.0.*.jar .
